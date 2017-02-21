@@ -15,6 +15,7 @@ class ToDoTableViewCell: UITableViewCell {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var titlelabel: UILabel!
 
+    @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var descriptionlabel: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()

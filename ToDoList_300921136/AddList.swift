@@ -14,9 +14,10 @@ import Firebase
 import FirebaseDatabase
 class AddList: UIViewController {
     
-    @IBOutlet weak var txtDescription: UITextField!
+   
     @IBOutlet weak var TextTiltle: UITextField!
     
+    @IBOutlet weak var txtDescription: UITextView!
     var databaseref : FIRDatabaseReference!
     {
         return FIRDatabase.database().reference()

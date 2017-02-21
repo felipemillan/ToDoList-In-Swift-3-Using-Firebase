@@ -15,7 +15,8 @@ import FirebaseDatabase
 class UpdateTableViewController: UIViewController {
 
     
-    @IBOutlet weak var txtDescription: UITextField!
+    @IBOutlet weak var txtDescription: UITextView!
+    //@IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var TextTiltle: UITextField!
     var todo : Todo!
     var databaseref : FIRDatabaseReference!

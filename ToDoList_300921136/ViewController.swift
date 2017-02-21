@@ -55,6 +55,7 @@ class ViewController: UITableViewController {
         
         cell.titlelabel.text = todoarray[indexPath.row].title
         cell.descriptionlabel.text = todoarray[indexPath.row].message
+        cell.datelabel.text=todoarray[indexPath.row].date
         cell.colorView.backgroundColor = UIColor(red: todoarray[indexPath.row].red, green: todoarray[indexPath.row].green, blue: todoarray[indexPath.row].blue, alpha: 1.0)
         
         return cell
