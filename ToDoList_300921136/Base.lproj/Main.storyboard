@@ -17,13 +17,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="143" sectionHeaderHeight="18" sectionFooterHeight="18" id="ncX-Sc-py0">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="143" id="CGe-Rt-9bi" customClass="ToDoTableViewCell" customModule="ToDoList_300921136" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="320" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CGe-Rt-9bi" id="9z8-pE-BNQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AxK-wF-nJ4">
@@ -59,12 +59,20 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-BM-MjY">
+                                            <rect key="frame" x="263" y="3" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switch_change:" destination="CGe-Rt-9bi" eventType="valueChanged" id="X7c-aT-3qN"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="colorView" destination="AxK-wF-nJ4" id="ivJ-lu-SQr"/>
                                     <outlet property="datelabel" destination="imw-g2-tDp" id="Z5E-r2-eMH"/>
                                     <outlet property="descriptionlabel" destination="cca-Jc-bDM" id="MHX-kQ-G63"/>
+                                    <outlet property="switchlbl" destination="lhi-BM-MjY" id="npb-SG-aCu"/>
                                     <outlet property="titlelabel" destination="qnY-XM-ALS" id="8jT-Wb-U9x"/>
                                 </connections>
                             </tableViewCell>
@@ -125,7 +133,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95686274509803926" green="0.94509803921568625" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="MaY-OU-Twq" secondAttribute="trailing" id="ANp-6l-bGo"/>
                             <constraint firstItem="MaY-OU-Twq" firstAttribute="top" secondItem="pdr-4t-ld7" secondAttribute="bottom" constant="40" id="I0a-XZ-NMA"/>
@@ -157,7 +165,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bG2-Qw-MAI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.67049226832223863" green="0.96532451923076923" blue="0.44441325678909216" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0015786184221544986" green="0.22973383842215281" blue="0.96532451923076923" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -166,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkY-OW-wdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="-488"/>
+            <point key="canvasLocation" x="1633" y="-595"/>
         </scene>
         <!--Update List-->
         <scene sceneID="Bmf-J0-rCZ">
@@ -180,7 +192,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SfW-F5-00b">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SfW-F5-00b">
                                 <rect key="frame" x="16" y="20" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.97202353350000004" green="1" blue="0.87816985309999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
@@ -195,7 +207,7 @@
                                     <action selector="UpdateBtn:" destination="45T-M4-KZa" eventType="touchUpInside" id="DcJ-Ft-kWF"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A64-WR-Hhw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A64-WR-Hhw">
                                 <rect key="frame" x="16" y="72" width="288" height="128"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="1" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -203,7 +215,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="A64-WR-Hhw" firstAttribute="leading" secondItem="SfW-F5-00b" secondAttribute="leading" id="2Oj-9a-w6u"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3Em-jy-2xf" secondAttribute="leading" id="7lr-vv-su8"/>
@@ -214,7 +226,7 @@
                             <constraint firstItem="P5C-kC-UkL" firstAttribute="top" secondItem="3Em-jy-2xf" secondAttribute="bottom" constant="233" id="RW7-PH-1rj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Em-jy-2xf" secondAttribute="trailing" id="SiY-zE-zD3"/>
                             <constraint firstItem="A64-WR-Hhw" firstAttribute="top" secondItem="SfW-F5-00b" secondAttribute="bottom" constant="22" id="fYR-8m-C8c"/>
-                            <constraint firstItem="SfW-F5-00b" firstAttribute="top" secondItem="hle-do-uBG" secondAttribute="bottom" constant="115" id="tEO-ql-e3X"/>
+                            <constraint firstItem="SfW-F5-00b" firstAttribute="top" secondItem="hle-do-uBG" secondAttribute="bottom" constant="20" id="tEO-ql-e3X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Update List" id="N0A-Xo-BVT"/>
